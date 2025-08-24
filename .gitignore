@@ -1,0 +1,10 @@
+env
+.env
+document_portal.egg-info
+venv/
+logs/
+*.pyc
+test.py
+archive
+faiss_index/
+data/
