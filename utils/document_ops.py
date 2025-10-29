@@ -63,7 +63,7 @@ class FastAPIFileAdapter:
         return self._uf.file.read()
 
 
-def _read_pdf_via_handler(handler, path: str) -> str:
+def read_pdf_via_handler(handler, path: str) -> str:
     """
     Helper function to read PDF using DocHandler.
     """

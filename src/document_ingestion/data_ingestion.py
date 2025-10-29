@@ -114,11 +114,13 @@ class ChatIngestor:
             self.temp_dir = self._resolve_dir(self.temp_base)
             self.faiss_dir = self._resolve_dir(self.faiss_base)
 
-            log.info("ChatIngestor initialized",
-                          session_id=self.session_id,
-                          temp_dir=str(self.temp_base),
-                          faiss_dir=str(self.faiss_base),
-                          sessionized=self.use_session)
+            log.info(
+                "ChatIngestor initialized",
+                session_id=self.session_id,
+                temp_dir=str(self.temp_base),
+                faiss_dir=str(self.faiss_base),
+                sessionized=self.use_session
+            )
             
         except Exception as e:
             log.error("Failed to initialize ChatIngestor", error=str(e))
@@ -139,7 +141,7 @@ class ChatIngestor:
 
     def build_retriever(self,
         uploaded_files: Iterable,
-        *,
+        *,                           # * indicates that all arguments after it must be passed as keyword arguments     
         chunk_size: int = 1000,
         chunk_overlap: int = 200,
         k: int = 5
